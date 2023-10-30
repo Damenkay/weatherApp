@@ -42,7 +42,7 @@ export class DataDisplayComponent implements OnInit{
       this.weatherData = apiData;
       this.apiIcon =this.weatherData.weather[0].icon
          console.log(this.apiIcon);
-      this.iconLInk = "https://openweathermap.org/img/w/"+this.apiIcon+".png"
+      this.iconLInk = "http://openweathermap.org/img/w/"+this.apiIcon+".png"
          console.log(this.iconLInk);
       const apiForcastData = JSON.parse(storedData)
       this.forcastData = apiForcastData
@@ -73,7 +73,7 @@ export class DataDisplayComponent implements OnInit{
           this.ifError = true;
         });
          this.apiIcon =this.weatherData.weather[0].icon
-         this.iconLInk = "https://openweathermap.org/img/w/"+this.apiIcon+".png"
+         this.iconLInk = "http://openweathermap.org/img/w/"+this.apiIcon+".png"
          
     }   
 }
