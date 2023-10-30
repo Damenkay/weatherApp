@@ -11,7 +11,7 @@
           </div>
           
   
-          <h3 class="mb-5 pb-2 fw-normal">Check the weather forecast</h3>
+          <h3 class="mb-3 pb-5 fw-normal">Check the weather forecast</h3>
   
           <div class="input-group rounded mb-3">
             <input type="search" class="form-control rounded mb-4" placeholder="City" aria-label="Search"
@@ -35,10 +35,11 @@
               <label class="form-check-label" for="inlineRadio2">Farenheit</label>
             </div>
           </div>
+          
 
-          <div *ngIf="weatherData">
+          <div class="flex display-space-between" *ngIf="weatherData">
 
-            <div class="card shadow-0 border" *ngIf="isCelsius">
+            <div class="card shadow-10 border  " *ngIf="isCelsius">
               <div class="card-body p-4">
   
                 <h4 class="mb-1 sfw-normal">{{weatherData.name}} - {{weatherData.sys.country}}</h4>
@@ -73,6 +74,25 @@
     
               </div>
             </div>
+
+            <!-- <div class="card shadow-0 border"  >
+              <div class="card-body p-4">
+    
+                <h4 class="mb-1 sfw-normal">{{weatherData.name}} - {{weatherData.sys.country}}</h4>
+                <p class="mb-2"><fa-icon [icon]="thermoIcon"></fa-icon>Current temperature: <strong>{{weatherData.main.temp|fahrenheit|number:'1.1-1'}}°F</strong></p>
+                <p><fa-icon [icon]="thermoIcon"></fa-icon>Feels like: <strong>{{weatherData.main.feels_like|fahrenheit|number:'1.1-1'}}°F</strong></p>
+                <p><fa-icon [icon]="thermoIcon"></fa-icon>Max: <strong>{{weatherData.main.temp_max|fahrenheit|number:'1.1-1'}}°F</strong>, Min: <strong>{{weatherData.main.temp_min|fahrenheit|number:'1.1-1'}}°F</strong></p>
+                <p><fa-icon [icon]="humidityIcon"></fa-icon>Humidity: <strong>{{weatherData.main.humidity|number}}</strong></p>
+                <p><fa-icon [icon]="pressureIcon"></fa-icon>Pressure: <strong>{{weatherData.main.pressure|number}} </strong></p>
+                
+                <div class="d-flex flex-row align-items-center">
+                  <p class="mb-0 me-4">{{weatherData.weather[0].description}}</p>
+                  <img [src]="iconLInk" alt="weather icon">
+                </div>
+               
+    
+              </div>
+            </div> -->
 
           </div>
 

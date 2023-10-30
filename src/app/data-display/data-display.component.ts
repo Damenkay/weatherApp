@@ -16,24 +16,22 @@ export class DataDisplayComponent implements OnInit{
   displayError:any;
   ifError = false;
   forcastData: any;
+  apiIcon:any;
+  iconLInk: string | undefined;
+  
+  // Angular Icons 
   filmIcon = faFilm;
   cloudIcon = faCloud
   thermoIcon = faThermometerEmpty
   humidityIcon = faWater
   pressureIcon = faArrowCircleDown
   
-  apiIcon:any;
-  iconLInk: string | undefined;
 
-
-  
   constructor(private weatherService:WeatherService){
 
   }
   ngOnInit(){
     this.getJsonData();
-
-    
   }
     getJsonData(){
       const storedData = localStorage.getItem('weatherData')
@@ -49,8 +47,6 @@ export class DataDisplayComponent implements OnInit{
       const apiForcastData = JSON.parse(storedData)
       this.forcastData = apiForcastData
       console.log('ForcastData data from local storage:', apiForcastData);
-
-      
 
     } else{
       console.log('No data from local storage');
@@ -77,15 +73,7 @@ export class DataDisplayComponent implements OnInit{
           this.ifError = true;
         });
          this.apiIcon =this.weatherData.weather[0].icon
-         const {icoo} = this.weatherData.weather[0].icon
-         console.log(this.apiIcon);
-         this.iconLInk = "http://openweathermap.org/img/w/"+this.apiIcon+".png"
-         console.log(this.iconLInk);
+         this.iconLInk = "https://openweathermap.org/img/w/"+this.apiIcon+".png"
          
-    }
-
- 
-
-    
-   
+    }   
 }
