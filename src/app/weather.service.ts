@@ -16,7 +16,6 @@ export class WeatherService {
     getCityForcast(city:string){
       return this.http.get(this.forcastURL+city+'&appid='+this.APIkey);
     }
-
     getCityWeather(city:string){
       return this.http.get(this.weatherURL+city+'&appid='+this.APIkey);
     }
