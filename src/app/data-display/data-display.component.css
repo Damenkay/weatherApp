@@ -1,0 +1,18 @@
+.card-responsive {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    transform-origin: top; /* Add this line */
+  }
+  
+  .card-responsive h4,
+  .card-responsive p,
+  .card-responsive label {
+    color: #000 !important;
+  }
+  
+  @media (max-width: 767.98px) {
+    .card-responsive {
+      margin-top: 20px;
+    }
+  }
