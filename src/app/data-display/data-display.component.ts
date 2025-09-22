@@ -12,7 +12,7 @@ export class DataDisplayComponent implements OnInit{
   WeatherService: any;
   location:any;
   isFahrenheit = false;
-  isCelsius = false;
+  isCelsius = true;
   displayError:any;
   ifError = false;
   forcastData: any;
@@ -54,13 +54,13 @@ export class DataDisplayComponent implements OnInit{
     }
 
     onCelsius(){
-      this.isCelsius = !this.isCelsius;
+      this.isCelsius = true;
       this.isFahrenheit = false;
       
      }
 
     onFahrenheit(){
-      this.isFahrenheit = !this.isFahrenheit;
+      this.isFahrenheit = true;
       this.isCelsius = false;
      }
 
@@ -75,5 +75,9 @@ export class DataDisplayComponent implements OnInit{
          this.apiIcon =this.weatherData.weather[0].icon
          this.iconLInk = "http://openweathermap.org/img/w/"+this.apiIcon+".png"
          
-    }   
+    }
+
+    closeWeather(){
+      this.weatherData = null;
+    }
 }
